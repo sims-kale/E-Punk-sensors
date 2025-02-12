@@ -1,0 +1,55 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.2393476548600155 -0.0038879191698373804 -0.9709261476536408 3.023903609195142
+  position 0.6021167942288057 0.5083879606226004 0.27328718614282205
+  follow "e-puck"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 0 1 -1.5707953071795862
+  floorSize 1.2 1.8
+  floorTileSize 1.2 1.8
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/worlds/textures/oval_line.png"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+}
+DEF E_PUCK E-puck {
+  hidden position_0_0 3.2976000100227827
+  hidden position_0_1 3.297600010027132
+  hidden linearVelocity_0 0.009093055144515897 4.269364866668178e-08 4.08201720839926e-08
+  hidden angularVelocity_0 -2.894226665165095e-08 0.006203596171872052 1.3158855527883978e-09
+  hidden rotation_1 0 1 0 3.2976000100227827
+  hidden linearVelocity_1 0.009124072281251132 4.283802048683652e-08 1.5439427513156136e-11
+  hidden angularVelocity_1 -2.1409066067086648e-06 0.45620359618186157 1.4180479974848948e-08
+  hidden rotation_2 0 1 0 3.297600010027132
+  hidden linearVelocity_2 0.00912407235161482 4.283870841972862e-08 5.9231286533821885e-12
+  hidden angularVelocity_2 -2.1429296731512058e-06 0.4562035961846642 -1.3720570390142796e-08
+  translation 0.07123197379497677 0.44000030898533815 -6.394609332521957e-05
+  rotation -4.204440538903244e-06 0.9999934596766507 0.003616709311756629 0.0012982850417059852
+  controller "line_following_controller"
+  window "botstudio"
+  camera_width 40
+  camera_height 1
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
