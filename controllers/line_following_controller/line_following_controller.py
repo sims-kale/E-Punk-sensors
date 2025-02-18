@@ -3,8 +3,8 @@ from controller import Robot, Motor
 # You may need to import some classes of the controller module. Ex:
 #  from controller import Robot, Motor, DistanceSensor
 robot = Robot()
-time_speed = 50
-max_speed = 4.50
+time_speed = 64
+max_speed = 3.50
 
 # Get the time step of the current world
 TIME_STEP = int(robot.getBasicTimeStep())
@@ -18,8 +18,8 @@ leftWheel.setPosition(float('inf'))
 rightWheel.setPosition(float('inf'))
 
 # Set initial velocity
-leftWheel.setVelocity(0.1 * max_speed)
-rightWheel.setVelocity(0.1 * max_speed)
+leftWheel.setVelocity(0.5 * max_speed)
+rightWheel.setVelocity(0.5 * max_speed)
 
 # Get and enable sensors
 left_gs0 = robot.getDevice('gs0')
@@ -34,5 +34,29 @@ while robot.step(TIME_STEP) != -1:
 
     print("Value 1:", val1)
     print("Value 2:", val2)
-
-# Enter here exit cleanup code.
+    
+    if val1 > 500:
+        left = "White"
+    else:
+        left = "Black"
+    if val2 > 500:
+        right = "White"
+    else:
+        right = "Black"
+    
+    if left== "Black" and right =="Black":
+        leftWheel.setVelocity(0.5 * max_speed)
+        rightWheel.setVelocity(0.5 * max_speed)
+        
+    elif left == "White" and right == "Black":
+        leftWheel.setVelocity(0.5* max_speed)
+        rightWheel.setVelocity(-0.5* max_speed)
+    # else left =="White" and right == "Black":
+       
+    elif left == "Black" and right == "White":
+        leftWheel.setVelocity(-0.5* max_speed)
+        rightWheel.setVelocity(0.5* max_speed)
+    
+    else:
+        leftWheel.setVelocity(0.0)
+        rightWheel.setVelocity(0.0)
