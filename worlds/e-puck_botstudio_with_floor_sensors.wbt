@@ -5,13 +5,15 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/contests/tower_of_hanoi/protos/YoubotFlag.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.0885485068800974 0.9917235323262535 -0.0929709490090522 0.7755752736819634
-  position -1.6351322043571492 0.0069096214754632715 0.8954290067086299
-  follow "e-puck"
+  orientation -0.20499800351238343 0.25423732782964087 0.9451662286042496 1.5721635714732476
+  position -0.3839713908363125 -0.8500500260579429 0.691879548678495
+  follow "line_follower"
 }
 TexturedBackground {
 }
@@ -31,20 +33,11 @@ RectangleArena {
     metalness 0
   }
 }
-DEF E_PUCK E-puck {
-  hidden position_0_0 194.67661107208102
-  hidden position_0_1 176.7701351253663
-  hidden linearVelocity_0 0.00011594147477704183 -0.00010830439177457944 2.1496204425374968e-08
-  hidden angularVelocity_0 0.007219977295291801 0.007729093915211684 2.7366535686431335e-11
-  hidden rotation_1 0 1 0 6.181051856693422
-  hidden linearVelocity_1 0.00015458648457584631 -0.00014440384928438995 -1.8549117797661836e-11
-  hidden angularVelocity_1 0.00722018896261748 0.007729320508273618 -1.7365121378912605e-10
-  hidden rotation_2 0 1 0 0.8409465243378736
-  hidden linearVelocity_2 0.0001545864841097832 -0.0001444038477976056 -1.9017720731403326e-11
-  hidden angularVelocity_2 0.007220188962465755 0.007729320508376889 2.2838023791679094e-10
-  translation -0.6732290000174677 -0.2799539999790051 -6.395923033603729e-05
-  rotation 0.0003114934878180926 -0.0001228546671653124 0.9999999439392674 2.390238108958792
-  controller "line_following_controller"
+DEF Obastacle_Avoider E-puck {
+  translation 0.222906 0.448673 -0.0013721
+  rotation 0.0010946450274752707 2.079950204489481e-07 0.9999994008759309 3.097761400333768
+  name "obstcale_avoider"
+  controller "obstacle_avoidance"
   controllerArgs [
     ""
   ]
@@ -55,4 +48,41 @@ DEF E_PUCK E-puck {
     E-puckGroundSensors {
     }
   ]
+}
+DEF Line_Follower E-puck {
+  hidden rotation_1 0 -1 0 2.9802322387695313e-08
+  hidden rotation_2 0 -1 0 2.9802322387695313e-08
+  translation -0.3345683786738011 0.13222392431771512 -6.396199577875933e-05
+  rotation 4.0706826034373734e-07 3.638613786848222e-07 -0.999999999999851 0.0060181673389229084
+  name "line_follower"
+  controller "<none>"
+  controllerArgs [
+    ""
+  ]
+  window "botstudio"
+  camera_width 40
+  camera_height 1
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+YoubotFlag {
+  translation -0.51 0.43 0
+}
+CardboardBox {
+  translation -0.36 0.42 0
+  size 0.1 0.1 0.1
+}
+CardboardBox {
+  translation 0.317821 0.423476 0
+  rotation 0 0 1 -0.261795307179586
+  name "cardboard box(2)"
+  size 0.1 0.1 0.1
+}
+CardboardBox {
+  translation -0.677929 0.304269 0
+  rotation 0 0 1 -0.785395307179586
+  name "cardboard box(1)"
+  size 0.1 0.1 0.1
 }
