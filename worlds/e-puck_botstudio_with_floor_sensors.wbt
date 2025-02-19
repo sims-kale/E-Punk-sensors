@@ -5,14 +5,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/contests/tower_of_hanoi/protos/YoubotFlag.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.20499800351238343 0.25423732782964087 0.9451662286042496 1.5721635714732476
-  position -0.3839713908363125 -0.8500500260579429 0.691879548678495
+  orientation -0.7038666917552812 0.20557621545561736 0.6799338937546957 2.799906841192195
+  position -0.36427723299210746 0.5703480554088817 2.3282086524883145
   follow "line_follower"
 }
 TexturedBackground {
@@ -34,8 +33,20 @@ RectangleArena {
   }
 }
 DEF Obastacle_Avoider E-puck {
-  translation 0.222906 0.448673 -0.0013721
-  rotation 0.0010946450274752707 2.079950204489481e-07 0.9999994008759309 3.097761400333768
+  hidden position_0_0 163.65466947093992
+  hidden position_0_1 127.9598318130802
+  hidden linearVelocity_0 -0.04472260404137411 0.003936295640837781 -6.517619330613788e-09
+  hidden angularVelocity_0 0.0006108295711471811 0.006939965084614336 7.166274747965841e-10
+  hidden translation_1 0 0.026 0.02
+  hidden rotation_1 0 1 0 0.2918514842706736
+  hidden linearVelocity_1 -0.0446879041118732 0.003933245581784844 -8.580175826698017e-11
+  hidden angularVelocity_1 -0.19666209706300697 -2.2343952156590405 6.242054519300293e-08
+  hidden translation_2 0 -0.02600000000000002 0.02
+  hidden rotation_2 0 1 0 2.2961256694884704
+  hidden linearVelocity_2 -0.04468790476279267 0.003933237443148427 6.663755495685653e-11
+  hidden angularVelocity_2 -0.1966620534290626 -2.234395219496882 -5.954731007651304e-08
+  translation 0.03690277802809924 0.4410561296622237 -6.39622680976594e-05
+  rotation -9.054744404597698e-06 3.9784766151021063e-07 0.9999999999589266 3.0538030846530484
   name "obstcale_avoider"
   controller "obstacle_avoidance"
   controllerArgs [
@@ -50,10 +61,12 @@ DEF Obastacle_Avoider E-puck {
   ]
 }
 DEF Line_Follower E-puck {
-  hidden rotation_1 0 -1 0 2.9802322387695313e-08
-  hidden rotation_2 0 -1 0 2.9802322387695313e-08
-  translation -0.3345683786738011 0.13222392431771512 -6.396199577875933e-05
-  rotation 4.0706826034373734e-07 3.638613786848222e-07 -0.999999999999851 0.0060181673389229084
+  hidden translation_1 0 0.026 0.02
+  hidden rotation_1 0 1 0 0
+  hidden translation_2 0 -0.026 0.02
+  hidden rotation_2 0 -1 0 5.960464477539063e-08
+  translation -0.33456837867380074 0.13222392431771493 -6.396199560369797e-05
+  rotation 4.0611962650041844e-07 4.9257142293405544e-08 -0.9999999999999162 0.0060181709483342
   name "line_follower"
   controller "<none>"
   controllerArgs [
@@ -67,22 +80,7 @@ DEF Line_Follower E-puck {
     }
   ]
 }
-YoubotFlag {
-  translation -0.51 0.43 0
-}
 CardboardBox {
-  translation -0.36 0.42 0
-  size 0.1 0.1 0.1
-}
-CardboardBox {
-  translation 0.317821 0.423476 0
-  rotation 0 0 1 -0.261795307179586
-  name "cardboard box(2)"
-  size 0.1 0.1 0.1
-}
-CardboardBox {
-  translation -0.677929 0.304269 0
-  rotation 0 0 1 -0.785395307179586
-  name "cardboard box(1)"
+  translation -0.36 0.45 0
   size 0.1 0.1 0.1
 }

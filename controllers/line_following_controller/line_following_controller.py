@@ -3,7 +3,6 @@ from controller import Robot, Motor
 # You may need to import some classes of the controller module. Ex:
 #  from controller import Robot, Motor, DistanceSensor
 robot = Robot()
-time_speed = 64
 max_speed = 3.50
 
 # Get the time step of the current world
