@@ -58,6 +58,8 @@ while robot.step(TIME_STEP) != -1:
     # Read sensor values
     ps_value = [max(0, int(ps[i].getValue() - PS_OFFSET_SIMULATION[i])) for i in range(NB_DIST_SENS)]
     gs_value = [gs[i].getValue() for i in range(NB_GROUND_SENS)]
+    print("ps_values", ps_value)
+    print("gs_values", gs_value)
     
     # Initialize speeds
     speed_left = 0
@@ -104,6 +106,5 @@ while robot.step(TIME_STEP) != -1:
     left_motor.setVelocity(speed_left * 0.00628)
     right_motor.setVelocity(speed_right * 0.00628)
     
-    # Debug output
     print(f"Ontrack: {not (avoiding or around or recovery)}, "
           f"Avoiding: {avoiding}, Around: {around}, Recovery: {recovery}")

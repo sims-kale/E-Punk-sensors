@@ -5,20 +5,23 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/curriculum/protos/Obstacle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/breakfast/protos/CerealBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/contests/tower_of_hanoi/protos/YoubotFlag.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.09808258896667353 -0.988637168509612 0.11391380418057964 5.445428345087646
-  position -1.7936765526448109 0.2912906303079212 1.8660839545919392
+  orientation -0.2577488092989275 0.5173569712804047 0.8160314427597455 1.2218804444051472
+  position -0.9497283067246562 -2.0299797070485535 1.8073477526507367
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
-  rotation 0 0 1 -1.5707953071795862
+  translation -0.03 -0.0373195 0
+  rotation 0 0 1 -2.094395307179586
   floorSize 1.2 1.8
   floorTileSize 1.2 1.8
   floorAppearance PBRAppearance {
@@ -31,19 +34,30 @@ RectangleArena {
     metalness 0
   }
 }
+Obstacle {
+  translation 0 0.47 0.025
+}
+Obstacle {
+  translation -0.62 -0.18 0.025
+  name "obstacle(2)"
+}
+Obstacle {
+  translation 0.34 -0.02 0.025
+  name "obstacle(1)"
+}
 DEF Obastacle_Avoider E-puck {
-  hidden position_0_0 371.76325996915136
-  hidden position_0_1 398.3401402706593
-  hidden linearVelocity_0 0.02519349598993741 0.0002535877877838243 -1.8448294459013128e-08
-  hidden angularVelocity_0 -5.059903352790895e-05 0.004984626919439172 0.0018060107238532675
-  hidden rotation_1 0 -0.9999999999999999 0 4.936006977353159
-  hidden linearVelocity_1 0.025170349434855355 0.00025333467829042797 -1.8253538682281959e-09
-  hidden angularVelocity_1 -0.012666547271993985 1.2584527362312068 0.001806517927290665
-  hidden rotation_2 0 -1 0 1.487593719345788
-  hidden linearVelocity_2 0.0252664897725746 0.00025433176277462526 1.8267398711475773e-09
-  hidden angularVelocity_2 -0.01271677335672645 1.2633892884304838 0.0018065405088696054
-  translation 0.2226212886892779 -0.43389417548403353 -6.395824957982667e-05
-  rotation 0.00031937031921748407 -0.06206898936021311 0.9980718103234862 0.010162552840955987
+  hidden position_0_0 12571.683714822848
+  hidden position_0_1 10656.22556323242
+  hidden linearVelocity_0 0.025162310535805324 0.001219146220232024 1.277336018413489e-06
+  hidden angularVelocity_0 -0.0002849924576508158 0.005247388253338013 0.04672768584431068
+  hidden rotation_1 0 1 0 5.604951947945524
+  hidden linearVelocity_1 0.02397328653622664 0.001140708570935515 -1.5284413201732338e-07
+  hidden angularVelocity_1 -0.0568386240736805 1.192977369702706 0.04708387177993804
+  hidden rotation_2 0 1 0 2.2394079253293198
+  hidden linearVelocity_2 0.026417433566281345 0.0013008938624239285 1.0805252412823061e-07
+  hidden angularVelocity_2 -0.0652413350733584 1.326581726212327 0.04809931618325282
+  translation 0.3599461755373551 -0.6259533836469596 -6.458325178244732e-05
+  rotation -0.0005969864164228347 -0.004613648383517065 -0.9999891788693577 -0.04790675578996506
   name "obstcale_avoider"
   controller "obstacle_avoider"
   controllerArgs [
@@ -57,7 +71,17 @@ DEF Obastacle_Avoider E-puck {
     }
   ]
 }
-CardboardBox {
-  translation -0.36 0.45 0
-  size 0.1 0.1 0.1
+CerealBox {
+  translation 0.6729073122731016 -0.12204470484124343 -0.0003924781657473411
+  rotation 0.00010040616129384525 7.694253849793115e-05 -0.9999999919992243 1.82730664254279
+  size 0.1 0.2 0.1
+}
+CerealBox {
+  translation -0.03969138836072731 -0.5134864547611608 -0.0003923973046004309
+  rotation -3.709085778219558e-05 -6.594885654020808e-05 -0.9999999971375083 1.82697108087382
+  name "cereal box(1)"
+  size 0.1 0.2 0.1
+}
+YoubotFlag {
+  rotation 0 0 1 -2.094395307179586
 }
